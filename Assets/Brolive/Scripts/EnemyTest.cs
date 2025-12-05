@@ -78,7 +78,7 @@ namespace brolive
             }
         }
 
-        bool AttemptBeginPursue()
+        bool AttemptBeginPursue()//Copy this
         {
             //Debug.Log("attempting to pursue");
 
@@ -96,7 +96,7 @@ namespace brolive
             return false;
         }
 
-        void UpdatePursue()
+        void UpdatePursue()//Copy this
         {
             //Debug.Log("in pursue");
 
@@ -135,8 +135,8 @@ namespace brolive
                 return;
             }
 
-            targetVelocity = _transform.forward * speed;
-            targetVelocity.y = _rigidbody.linearVelocity.y;
+            targetVelocity = _transform.forward * speed; //Seperate function??
+            targetVelocity.y = _rigidbody.linearVelocity.y; //Seperate function??
 
             if (currentStateElapsed > 1) // rebuild path every half second
             {
