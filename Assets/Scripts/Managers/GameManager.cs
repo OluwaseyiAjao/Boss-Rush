@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-    }
+    }   
 
     public void RestartLevel()
     {

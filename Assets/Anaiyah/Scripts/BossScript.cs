@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 namespace Anaiyah
 {
@@ -10,7 +11,7 @@ namespace Anaiyah
         [Header ("Health")]
         [SerializeField] private int maxHealth ;
         [SerializeField] int currentHealth;
-
+        
         [Header("Dodge")] 
         public float dodgeRange = 6f;
         public float aggroDistance = 10f;
@@ -20,6 +21,7 @@ namespace Anaiyah
         [SerializeField] Animator animator;
         [SerializeField] public Transform player;
         [SerializeField] private float whentoPhaseTwo;
+        [SerializeField] public float turnSpeed = 3.5f;
 
         public static BossScript Instance;
         public UnityEvent OnStartAttack;
@@ -129,6 +131,11 @@ namespace Anaiyah
             
         }
 
+        public void HitTrigger(int ctx)
+        {
+            animator.SetTrigger("isHit");
+        }
+
        void ChooseDodgeDirection()
         {
             Vector3 toPlayer = player.position - transform.position;
@@ -161,7 +168,11 @@ namespace Anaiyah
 
                 yield return new WaitForSeconds(0.2f);
         }
-        
+
+        public void ChangeHealth(int damage, int health)
+        {
+            currentHealth = health;
+        }
     }
   
 }

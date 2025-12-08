@@ -20,7 +20,7 @@ namespace Anaiyah
         // OnStateExit is called before OnStateExit is called on any state inside this state machine
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            BossScript.Instance.OnStartAttack.Invoke();
+            BossScript.Instance.OnStartAttack.Invoke(); 
         }
 
         // OnStateMove is called before OnStateMove is called on any state inside this state machine
