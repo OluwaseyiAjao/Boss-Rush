@@ -6,7 +6,7 @@ namespace Anaiyah
     public class Boss_Dodge : StateMachineBehaviour
     {
         public float dodgeSpeed = 5f;
-        public float dodgeDistance = 0.5f;
+        public float dodgeDistance = 0.9f;
 
         private float distanceMoved = 0f;
 
@@ -50,9 +50,9 @@ namespace Anaiyah
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            BossScript boss = animator.GetComponent<BossScript>();
-            if (boss != null) ;
-            boss.OnDodge();
+            BossScript boss = BossScript.Instance;
+            if (boss != null ) 
+                boss.OnDodge();
         }
     }
 

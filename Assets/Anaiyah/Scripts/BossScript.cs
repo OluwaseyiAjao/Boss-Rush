@@ -113,7 +113,6 @@ namespace Anaiyah
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                //Die();
             }
         }
 
@@ -127,6 +126,7 @@ namespace Anaiyah
                  animator.SetInteger("Phase", (int)Phases.Phase2);
                  
              }
+             
              
             
         }
@@ -173,6 +173,17 @@ namespace Anaiyah
         {
             currentHealth = health;
         }
+
+        public void Death()
+        {
+            if (currentHealth == 0)
+            {
+                animator.SetBool("isDead", true);
+            }
+        }
+        
+        
     }
-  
+    
+    
 }
